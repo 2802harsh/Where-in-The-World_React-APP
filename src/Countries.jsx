@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Fade from "react-reveal/Fade";
 import Country from "./Country";
 
 function Countries(props) {
