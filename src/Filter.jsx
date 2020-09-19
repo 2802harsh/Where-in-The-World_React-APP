@@ -9,7 +9,7 @@ function Filter(props) {
   }
   useEffect(() => {
     props.filterFunction(filter);
-  }, [filter]);
+  });
 
   const [showall, setAll] = useState(false);
 
@@ -30,50 +30,50 @@ function Filter(props) {
       </button>
       <div className="dropdown-menu theme" aria-labelledby="dropdownMenuButton">
         {showall && (
-          <a
+          <span
             onClick={() => handleChange("All")}
             className="dropdown-item theme"
             href="#"
           >
             <span className="theme-white-hover theme">All</span>
-          </a>
+          </span>
         )}
 
-        <a
+        <span
           onClick={() => handleChange("Africa")}
           className="dropdown-item"
           href="#"
         >
           <span className="theme-white-hover theme">Africa</span>
-        </a>
-        <a
+        </span>
+        <span
           onClick={() => handleChange("America")}
           className="dropdown-item"
           href="#"
         >
           <span className="theme-white-hover theme">America</span>
-        </a>
-        <a
+        </span>
+        <span
           onClick={() => handleChange("Asia")}
           className="dropdown-item"
           href="#"
         >
           <span className="theme-white-hover theme">Asia</span>
-        </a>
-        <a
+        </span>
+        <span
           onClick={() => handleChange("Europe")}
           className="dropdown-item"
           href="#"
         >
           <span className="theme-white-hover theme">Europe</span>
-        </a>
-        <a
+        </span>
+        <span
           onClick={() => handleChange("Oceania")}
           className="dropdown-item"
           href="#"
         >
           <span className="theme-white-hover theme">Oceania</span>
-        </a>
+        </span>
       </div>
     </div>
   );
