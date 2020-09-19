@@ -5,6 +5,8 @@ import ImgLarge from "./ImgLarge";
 import Details from "./Details";
 import Back from "./Back";
 
+import Flip from "react-reveal/Flip";
+
 function IndividualCountry(props) {
   const [country, setPresent] = useState({
     currencies: [],
@@ -37,14 +39,16 @@ function IndividualCountry(props) {
   return (
     <div>
       <Back />
-      <div className="row">
-        <div className="col-md-6">
-          <ImgLarge country={country} />
+      <Flip top>
+        <div className="row">
+          <div className="col-md-6">
+            <ImgLarge country={country} />
+          </div>
+          <div className="col-md-6">
+            <Details country={country} codeList={codeList} />
+          </div>
         </div>
-        <div className="col-md-6">
-          <Details country={country} codeList={codeList} />
-        </div>
-      </div>
+      </Flip>
     </div>
   );
 }

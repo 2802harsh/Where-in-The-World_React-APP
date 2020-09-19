@@ -9,7 +9,7 @@ function Country(props) {
     // history.push(link);
   }
   return (
-    <Fade bottom big>
+    <Fade bottom>
       <div className="col-lg-3 col-md-4 col-sm-6 country">
         <Link
           onClick={handleClick}

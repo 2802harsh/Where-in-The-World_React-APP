@@ -1,6 +1,5 @@
 import React from "react";
-// import Zoom from "react-reveal/Zoom";
-// import Brightness3Icon from '@material-ui/icons/Brightness3';
+import Flip from "react-reveal/Flip";
 
 function TopBar(props) {
   return (
@@ -17,7 +16,9 @@ function TopBar(props) {
             }}
             className="dark-right"
           >
-            <i className="fas fa-moon" />
+            <Flip>
+              <i className="fas fa-moon" />
+            </Flip>
             Dark Mode
           </div>
         </div>

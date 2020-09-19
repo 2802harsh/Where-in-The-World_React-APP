@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function Details(props) {
   const country = props.country;
   const codes = props.codeList;
-
+  // var hist = useHistory();
   return (
     <div>
       <div className="row details-top">
@@ -81,7 +82,9 @@ function Details(props) {
               {country.borders.map((bord, ind) => {
                 return (
                   <div key={bord} className="theme border-button">
-                    {codes[bord]}
+                    <Link to={"/country/" + bord} className="border-a theme">
+                      {codes[bord]}
+                    </Link>
                   </div>
                 );
               })}
