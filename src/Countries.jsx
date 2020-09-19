@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import Country from "./Country";
 
 function Countries(props) {
@@ -69,7 +70,11 @@ function Countries(props) {
       // </Fade>
     );
   } else {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <CircularProgress />
+      </div>
+    );
   }
 }
 
