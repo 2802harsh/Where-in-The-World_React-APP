@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Flip from "react-reveal/Flip";
 
 function TopBar(props) {
@@ -7,8 +8,11 @@ function TopBar(props) {
     <div style={props.apply}>
       <nav className="navbar navbar-expand-lg topbar row theme">
         <div className="col-6">
-          <span className="navbar-brand mb-0 h1">Where in the World ?</span>
+          <Link to="/" className="theme" style={{ textDecoration: "none" }}>
+            <span className="navbar-brand mb-0 h1">Where in the World ?</span>
+          </Link>
         </div>
+
         <div className="col-6">
           <div
             onClick={() => {

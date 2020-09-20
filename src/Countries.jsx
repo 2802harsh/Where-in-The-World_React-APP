@@ -18,7 +18,6 @@ function Countries(props) {
           return country;
         })
       );
-      setLoad(true);
     });
   }, []);
 
@@ -45,15 +44,16 @@ function Countries(props) {
       }
     });
     setResults(filtered);
+    setLoad(true);
   }, [found, countries, props.query, props.filter]);
 
   useEffect(() => {
-    if (results.length === 0) {
+    if (results.length === 0 && load === true) {
       setFound(false);
     } else {
       setFound(true);
     }
-  }, [results]);
+  }, [results, load]);
 
   function viewCard(country) {
     return <Country ctry={country} key={country.alpha3Code} />;
@@ -72,7 +72,8 @@ function Countries(props) {
   } else {
     return (
       <div>
-        <CircularProgress />
+        Loading ...
+        <CircularProgress style={{ margin: "auto" }} />
       </div>
     );
   }
