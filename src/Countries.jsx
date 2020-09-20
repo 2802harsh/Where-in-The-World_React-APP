@@ -9,11 +9,9 @@ function Countries(props) {
   // const [error, setError] = useState("");
 
   useEffect(() => {
-    async function fetch() {
-      const resp = await axios.get("https://restcountries.eu/rest/v2/all");
-
+    axios.get("https://restcountries.eu/rest/v2/all").then((res) => {
       setCountries(
-        resp.data.map((country) => {
+        res.data.map((country) => {
           if (country.region === "Americas") {
             country.region = "America";
           }
@@ -21,8 +19,7 @@ function Countries(props) {
         })
       );
       setLoad(true);
-    }
-    fetch();
+    });
   });
 
   const [results, setResults] = useState(countries);
