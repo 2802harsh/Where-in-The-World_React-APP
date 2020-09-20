@@ -20,7 +20,7 @@ function Countries(props) {
       );
       setLoad(true);
     });
-  });
+  }, []);
 
   const [results, setResults] = useState(countries);
 
