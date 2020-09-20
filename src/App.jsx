@@ -11,18 +11,7 @@ import IndividualCountry from "./IndividualCountry";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 export default function App() {
-  // let his = useHistory()
-  // his.push("/");
-  // function usePrevious(value) {
-  //   const ref = useRef();
-  //   useEffect(() => {
-  //     ref.current = value;
-  //   });
-  //   return ref.current;
-  // }
-
   const [theme, setTheme] = useState("light");
-  // theme = usePrevious()
 
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("Filter By Region");
