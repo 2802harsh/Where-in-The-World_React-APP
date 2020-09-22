@@ -23,7 +23,7 @@ function Filter(props) {
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <span className="theme-white-hover theme">
+        <span>
           {" "}
           &nbsp; {filter} &nbsp; &nbsp; <KeyboardArrowDownIcon />
         </span>
@@ -33,45 +33,24 @@ function Filter(props) {
           <span
             onClick={() => handleChange("All")}
             className="dropdown-item theme"
-            href="#"
           >
             <span className="theme-white-hover theme">All</span>
           </span>
         )}
 
-        <span
-          onClick={() => handleChange("Africa")}
-          className="dropdown-item"
-          href="#"
-        >
+        <span onClick={() => handleChange("Africa")} className="dropdown-item">
           <span className="theme-white-hover theme">Africa</span>
         </span>
-        <span
-          onClick={() => handleChange("America")}
-          className="dropdown-item"
-          href="#"
-        >
+        <span onClick={() => handleChange("America")} className="dropdown-item">
           <span className="theme-white-hover theme">America</span>
         </span>
-        <span
-          onClick={() => handleChange("Asia")}
-          className="dropdown-item"
-          href="#"
-        >
+        <span onClick={() => handleChange("Asia")} className="dropdown-item">
           <span className="theme-white-hover theme">Asia</span>
         </span>
-        <span
-          onClick={() => handleChange("Europe")}
-          className="dropdown-item"
-          href="#"
-        >
+        <span onClick={() => handleChange("Europe")} className="dropdown-item">
           <span className="theme-white-hover theme">Europe</span>
         </span>
-        <span
-          onClick={() => handleChange("Oceania")}
-          className="dropdown-item"
-          href="#"
-        >
+        <span onClick={() => handleChange("Oceania")} className="dropdown-item">
           <span className="theme-white-hover theme">Oceania</span>
         </span>
       </div>

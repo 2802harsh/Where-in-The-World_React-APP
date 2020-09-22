@@ -19,6 +19,7 @@ function Countries(props) {
         })
       );
     });
+    setLoad(true);
   }, []);
 
   const [results, setResults] = useState(countries);
@@ -44,8 +45,7 @@ function Countries(props) {
       }
     });
     setResults(filtered);
-    setLoad(true);
-  }, [found, countries, props.query, props.filter]);
+  }, [load, found, countries, props.query, props.filter]);
 
   useEffect(() => {
     if (results.length === 0 && load === true) {
@@ -55,15 +55,22 @@ function Countries(props) {
     }
   }, [results, load]);
 
+  // useEffect(()=>{
+  //   setLoad(true);
+  // },[results])
+
   function viewCard(country) {
     return <Country ctry={country} key={country.alpha3Code} />;
   }
 
-  if (load) {
+  if (load === true) {
     return (
       // <Fade bottom big>
       found === true ? (
         <div className="row country-content">{results.map(viewCard)}</div>
+      ) : props.query === "" &&
+        (props.filter === "Filter By Region" || props.filter === "All") ? (
+        <h1>Loading</h1>
       ) : (
         <h1>No Match Found !</h1>
       )
@@ -72,8 +79,7 @@ function Countries(props) {
   } else {
     return (
       <div>
-        Loading ...
-        <CircularProgress style={{ margin: "auto" }} />
+        <CircularProgress style={{ textAlgin: "center" }} />
       </div>
     );
   }

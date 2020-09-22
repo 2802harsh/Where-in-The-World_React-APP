@@ -17,23 +17,23 @@ function IndividualCountry(props) {
   const [codeList, setCodes] = useState({});
 
   useEffect(() => {
-    async function fetchd() {
-      const restapi = await axios.get(
+    axios
+      .get(
         "https://restcountries.eu/rest/v2/alpha/" +
           props.routerProps.match.params.code
-      );
-      const allCount = await axios.get("https://restcountries.eu/rest/v2/all");
+      )
+      .then((res) => {
+        setPresent(res.data);
+      });
+    axios.get("https://restcountries.eu/rest/v2/all").then((res) => {
       function make(obj, ctry) {
         return {
           ...obj,
           [ctry.alpha3Code]: ctry.name
         };
       }
-      setCodes(allCount.data.reduce(make, {}));
-
-      setPresent(restapi.data);
-    }
-    fetchd();
+      setCodes(res.data.reduce(make, {}));
+    });
   }, [props.routerProps.match.params.code]);
 
   return (
